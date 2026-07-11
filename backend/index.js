@@ -5,7 +5,11 @@ import morgan from "morgan";
 
 import { connectDB } from "./config/db.js";
 import { notFound, errorHandler } from "./middleware/error.middleware.js";
-
+import authRouter from "./routes/auth.routes.js";
+import leadRouter from './routes/lead.routes.js'
+import contactRouter from "./routes/contact.routes.js";
+import noteRouter from "./routes/notes.routes.js";
+import tasksRouter from "./routes/tasks.routes.js";
 
 const app = express();
 
@@ -24,6 +28,12 @@ if(process.env.NODE_ENV !== "production") app.use(morgan("dev"));
 app.get("/api/health", (req, res) => {
     return res.json({success: true , status : "ok", service: "TTP CRM API"})
 });
+
+app.use("/api/auth",authRouter);
+app.use("/api/lead",leadRouter);
+app.use("/api/contact",contactRouter);
+app.use("/api/notes", noteRouter);
+app.use("/api/tasks",tasksRouter);
 
 app.use(notFound);
 app.use(errorHandler);

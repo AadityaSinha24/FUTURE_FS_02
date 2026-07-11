@@ -10,6 +10,8 @@ import leadRouter from './routes/lead.routes.js'
 import contactRouter from "./routes/contact.routes.js";
 import noteRouter from "./routes/notes.routes.js";
 import tasksRouter from "./routes/tasks.routes.js";
+import aiRouter from './routes/ai.routes.js';
+import analyticRouter from './routes/analytics.routes.js';
 
 const app = express();
 
@@ -34,6 +36,8 @@ app.use("/api/lead",leadRouter);
 app.use("/api/contact",contactRouter);
 app.use("/api/notes", noteRouter);
 app.use("/api/tasks",tasksRouter);
+app.use("/api/ai",aiRouter);
+app.use("/api/analytic",analyticRouter);
 
 app.use(notFound);
 app.use(errorHandler);

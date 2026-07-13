@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, useCallback } from "react";
-import { authApi } from "../lib/services";
-import { TOKEN_KEY } from "../lib/api";
+import { authApi } from "../lib/services.js";
+import { TOKEN_KEY } from "../lib/api.js";
 
 const AuthContext = createContext(null);
 

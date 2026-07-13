@@ -1,11 +1,4 @@
-/* ─────────────────────────────────────────────────────────────────────────
-   Mock data for the UI-only boilerplate.
 
-   This file lets the entire frontend run WITHOUT a backend. lib/services.js
-   serves this data (with a tiny artificial delay) so every page, chart and
-   dialog works exactly like the real app. Delete this file — and switch
-   lib/services.js back to the real API calls — once your backend is ready.
-   ───────────────────────────────────────────────────────────────────────── */
 
 const daysAgo = (n) => new Date(Date.now() - n * 86400000).toISOString();
 const daysAhead = (n) => new Date(Date.now() + n * 86400000).toISOString();

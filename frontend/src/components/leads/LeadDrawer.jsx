@@ -10,11 +10,11 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { Drawer, Button, Badge, Avatar, Spinner } from "../ui";
-import { AiEmailDialog } from "../ai/AiEmailDialog";
-import { aiApi } from "../../lib/services";
-import { currency, shortDate } from "../../lib/format";
-import { STAGE_STYLES, PRIORITY_STYLES } from "../../lib/constants";
-import { cn } from "../../lib/utils";
+import { AiEmailDialog } from "../ai/AiEmailDialog.jsx";
+import { aiApi } from "../../lib/services.js";
+import { currency, shortDate } from "../../lib/format.js";
+import { STAGE_STYLES, PRIORITY_STYLES } from "../../lib/constants.js";
+import { cn } from "../../lib/utils.js";
 import { toast } from "sonner";
 
 /** Detailed slide-over for a single lead: info, AI summary, email generator. */
@@ -66,7 +66,7 @@ export function LeadDrawer({ open, onClose, lead, onEdit, onDelete }) {
         </div>
 
         {/* Value */}
-        <div className="mt-5 rounded-2xl bg-surface p-4 shadow-\[var\(--shadow-soft\)\]">
+        <div className="mt-5 rounded-2xl bg-surface p-4 shadow-[var(--shadow-soft)]">
           <p className="text-xs uppercase tracking-wide text-ink-soft">Deal value</p>
           <p className="mt-1 text-2xl font-bold text-ink">{currency(lead.value)}</p>
         </div>
@@ -79,7 +79,7 @@ export function LeadDrawer({ open, onClose, lead, onEdit, onDelete }) {
         </div>
 
         {lead.notes && (
-          <div className="mt-4 rounded-2xl bg-surface p-4 shadow-\[var\(--shadow-soft\)\]">
+          <div className="mt-4 rounded-2xl bg-surface p-4 shadow-[var(--shadow-soft)]">
             <p className="text-xs font-medium uppercase tracking-wide text-ink-soft">
               Notes
             </p>

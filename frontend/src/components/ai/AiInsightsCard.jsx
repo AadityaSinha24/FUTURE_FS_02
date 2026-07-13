@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sparkles, TrendingUp, Lightbulb, RefreshCw } from "lucide-react";
 import { Card, Button, Spinner } from "../ui";
-import { aiApi } from "../../lib/services";
+import { aiApi } from "../../lib/services.js";
 import { toast } from "sonner";
 
 /**

@@ -1,6 +1,6 @@
 import { ArrowUpRight, ArrowDownRight } from "lucide-react";
 import { Card } from "../ui";
-import { cn } from "../../lib/utils";
+import { cn } from "../../lib/utils.js";
 
 /**
  * KPI stat card with icon, value and optional trend chip — mirrors the

@@ -6,7 +6,7 @@ import {
   DropdownLabel,
   DropdownSeparator,
 } from "../ui";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 
 /* Sticky top navbar: mobile menu toggle, global search, notifications, profile. */
@@ -38,7 +38,7 @@ export function Topbar({ onMenuClick }) {
           className="relative rounded-full border border-line bg-surface p-2.5 text-ink-soft transition hover:text-ink"
           aria-label="Notifications"
         >
-          <Bell className="h-\[18px\] w-\[18px\]" />
+          <Bell className="h-[18px] w-[18px]" />
           <span className="absolute right-2.5 top-2.5 h-2 w-2 rounded-full bg-brand-500 ring-2 ring-surface" />
         </button>
 

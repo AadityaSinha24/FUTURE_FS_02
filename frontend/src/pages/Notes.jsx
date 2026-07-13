@@ -14,9 +14,9 @@ import {
   FileText,
 } from "lucide-react";
 import { toast } from "sonner";
-import { PageHeader } from "../components/common/PageHeader";
-import { EmptyState } from "../components/common/EmptyState";
-import { ConfirmDialog } from "../components/common/ConfirmDialog";
+import { PageHeader } from "../components/common/PageHeader.jsx";
+import { EmptyState } from "../components/common/EmptyState.jsx";
+import { ConfirmDialog } from "../components/common/Confirm.jsx";
 import {
   Button,
   Card,
@@ -29,9 +29,9 @@ import {
   DropdownItem,
   Spinner,
 } from "../components/ui";
-import { notesApi, leadsApi } from "../lib/services";
-import { relative } from "../lib/format";
-import { cn } from "../lib/utils";
+import { notesApi, leadsApi } from "../lib/services.js";
+import { relative } from "../lib/format.js";
+import { cn } from "../lib/utils.js";
 
 // ── StatTile (copied from Leads premium pattern) ───────────────────────────────
 function StatTile({ icon: Icon, label, value, tint }) {

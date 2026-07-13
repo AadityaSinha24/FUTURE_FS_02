@@ -18,11 +18,11 @@ import {
   Download,
   Building2,
 } from "lucide-react";
-import { PageHeader } from "../components/common/PageHeader";
-import { EmptyState } from "../components/common/EmptyState";
-import { ConfirmDialog } from "../components/common/ConfirmDialog";
-import { LeadFormDialog } from "../components/leads/LeadFormDialog";
-import { LeadDrawer } from "../components/leads/LeadDrawer";
+import { PageHeader } from "../components/common/PageHeader.jsx";
+import { EmptyState } from "../components/common/EmptyState.jsx";
+import { ConfirmDialog } from "../components/common/Confirm.jsx";
+import { LeadFormDialog } from "../components/leads/LeadFormDialog.jsx";
+import { LeadDrawer } from "../components/leads/LeadDrawer.jsx";
 import {
   Card,
   Button,
@@ -33,16 +33,16 @@ import {
   DropdownItem,
   Spinner,
 } from "../components/ui";
-import { leadsApi } from "../lib/services";
-import { currency, relative } from "../lib/format";
+import { leadsApi } from "../lib/services.js";
+import { currency, relative } from "../lib/format.js";
 import {
   LEAD_STAGES,
   LEAD_PRIORITIES,
   LEAD_SOURCES,
   STAGE_STYLES,
   PRIORITY_STYLES,
-} from "../lib/constants";
-import { cn } from "../lib/utils";
+} from "../lib/constants.js";
+import { cn } from "../lib/utils.js";
 import { toast } from "sonner";
 
 export default function Leads() {
@@ -484,7 +484,7 @@ export default function Leads() {
 
       {/* Floating bulk action bar */}
       {selected.size > 0 && (
-        <div className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-3 rounded-full border border-line bg-surface px-3 py-2 shadow-\[var\(--shadow-pop\)\] animate-fade-up">
+        <div className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-3 rounded-full border border-line bg-surface px-3 py-2 shadow-[var(--shadow-pop)] animate-fade-up">
           <span className="pl-2 text-sm font-medium text-ink">
             {selected.size} selected
           </span>
@@ -567,7 +567,7 @@ function LeadGridCard({ lead, selected, onToggle, onOpen, onEdit, onDelete }) {
     <div
       onClick={onOpen}
       className={cn(
-        "group relative cursor-pointer rounded-2xl border bg-surface p-5 shadow\\-[var(--shadow-card)] transition hover\\:shadow-[var(--shadow-pop)]",
+        "group relative cursor-pointer rounded-2xl border bg-surface p-5 shadow-[var(--shadow-card)] transition hover:shadow-[var(--shadow-pop)]",
         selected ? "border-brand-400 ring-2 ring-brand-500/30" : "border-line"
       )}
     >

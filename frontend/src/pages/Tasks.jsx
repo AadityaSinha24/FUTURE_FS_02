@@ -21,10 +21,10 @@ import {
   Building2,
 } from "lucide-react";
 
-import { PageHeader } from "../components/common/PageHeader";
-import { EmptyState } from "../components/common/EmptyState";
-import { ConfirmDialog } from "../components/common/ConfirmDialog";
-import { StatCard } from "../components/common/StatCard";
+import { PageHeader } from "../components/common/PageHeader.jsx";
+import { EmptyState } from "../components/common/EmptyState.jsx";
+import { ConfirmDialog } from "../components/common/Confirm.jsx";
+import { StatCard } from "../components/common/StatCard.jsx";
 
 import {
   Button,
@@ -41,15 +41,15 @@ import {
   Spinner,
 } from "../components/ui";
 
-import { tasksApi, leadsApi } from "../lib/services";
-import { shortDate, dateInputValue } from "../lib/format";
+import { tasksApi, leadsApi } from "../lib/services.js";
+import { shortDate, dateInputValue } from "../lib/format.js";
 import {
   TASK_STATUSES,
   TASK_PRIORITIES,
   TASK_STATUS_STYLES,
   PRIORITY_STYLES,
 } from "../lib/constants";
-import { cn } from "../lib/utils";
+import { cn } from "../lib/utils.js";
 
 // ─── Priority accent bar colours ──────────────────────────────────────────────
 const PRIORITY_BAR = {

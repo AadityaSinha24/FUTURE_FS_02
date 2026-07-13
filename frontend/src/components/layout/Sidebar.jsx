@@ -10,14 +10,14 @@ import {
   LogOut,
   Sparkles,
 } from "lucide-react";
-import { cn } from "../../lib/utils";
-import { useAuth } from "../../context/AuthContext";
+import { cn } from "../../lib/utils.js";
+import { useAuth } from "../../context/AuthContext.jsx";
 
 /* Primary navigation — icon + label rail, matching the reference sidebar. */
 const NAV = [
   { to: "/", label: "Dashboard", icon: LayoutGrid, end: true },
-  { to: "/leads", label: "Leads", icon: Users },
-  { to: "/contacts", label: "Contacts", icon: Contact2 },
+  { to: "/lead", label: "Leads", icon: Users },
+  { to: "/contact", label: "Contacts", icon: Contact2 },
   { to: "/pipeline", label: "Pipeline", icon: KanbanSquare },
   { to: "/notes", label: "Notes", icon: StickyNote },
   { to: "/tasks", label: "Follow-ups", icon: CalendarCheck },
@@ -53,7 +53,7 @@ export function Sidebar({ onNavigate }) {
               )
             }
           >
-            <Icon className="h-\[18px\] w-\[18px\]" />
+            <Icon className="h-[18px] w-[18px]" />
             {label}
           </NavLink>
         ))}
@@ -73,14 +73,14 @@ export function Sidebar({ onNavigate }) {
             )
           }
         >
-          <Settings className="h-\[18px\] w-\[18px\]" />
+          <Settings className="h-[18px] w-[18px]" />
           Settings
         </NavLink>
         <button
           onClick={logout}
           className="flex w-full items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium text-ink-soft transition hover:bg-rose-50 hover:text-rose-600"
         >
-          <LogOut className="h-\[18px\] w-\[18px\]" />
+          <LogOut className="h-[18px] w-[18px]" />
           Log out
         </button>
       </div>

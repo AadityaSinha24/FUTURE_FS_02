@@ -1,4 +1,4 @@
-import { cn } from "../../lib/utils";
+import { cn } from "../../lib/utils.js";
 
 /**
  * Segmented pill tabs (matches the "Monthly / Annually" toggle in the reference).

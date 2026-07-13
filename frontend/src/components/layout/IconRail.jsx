@@ -9,16 +9,16 @@ import {
   Settings,
   LogOut,
 } from "lucide-react";
-import { cn } from "../../lib/utils";
-import { useAuth } from "../../context/AuthContext";
+import { cn } from "../../lib/utils.js";
+import { useAuth } from "../../context/AuthContext.jsx";
 
 /* Primary nav as an icon-only rail (reference style): a floating rounded
    column, active item rendered as a solid green circle, with settings /
    logout pinned to the bottom. */
 const NAV = [
   { to: "/", label: "Dashboard", icon: LayoutGrid, end: true },
-  { to: "/leads", label: "Leads", icon: Users },
-  { to: "/contacts", label: "Contacts", icon: Contact2 },
+  { to: "/lead", label: "Leads", icon: Users },
+  { to: "/contact", label: "Contacts", icon: Contact2 },
   { to: "/pipeline", label: "Pipeline", icon: KanbanSquare },
   { to: "/notes", label: "Notes", icon: StickyNote },
   { to: "/tasks", label: "Follow-ups", icon: CalendarCheck },

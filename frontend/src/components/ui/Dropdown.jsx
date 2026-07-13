@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { cn } from "../../lib/utils";
+import { cn } from "../../lib/utils.js";
 
 /**
  * Minimal click-to-open dropdown menu. `trigger` is rendered as the toggle;

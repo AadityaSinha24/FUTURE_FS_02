@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sparkles, Copy, Check, Wand2 } from "lucide-react";
 import { Dialog, Button, Field, Select, Textarea, Spinner } from "../ui";
-import { aiApi } from "../../lib/services";
+import { aiApi } from "../../lib/services.js";
 import { toast } from "sonner";
 
 /**

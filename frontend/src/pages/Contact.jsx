@@ -19,9 +19,9 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
-import { PageHeader } from "../components/common/PageHeader";
-import { EmptyState } from "../components/common/EmptyState";
-import { ConfirmDialog } from "../components/common/ConfirmDialog";
+import { PageHeader } from "../components/common/PageHeader.jsx";
+import { EmptyState } from "../components/common/EmptyState.jsx";
+import { ConfirmDialog } from "../components/common/Confirm.jsx";
 import {
   Button,
   Card,
@@ -36,16 +36,11 @@ import {
   DropdownItem,
   Spinner,
 } from "../components/ui";
-import { contactsApi } from "../lib/services";
-import { relative, shortDate } from "../lib/format";
-import { cn } from "../lib/utils";
+import { contactsApi } from "../lib/services.js";
+import { relative, shortDate } from "../lib/format.js";
+import { cn } from "../lib/utils.js";
 
-/* ─── useFlip ─────────────────────────────────────────────────────────────────
-   FLIP animation: when the ordered list changes (e.g. a contact is starred and
-   floats to the top), smoothly slide each card from its previous position to
-   its new one. Reads element rects before/after the reorder and animates the
-   inverse transform to zero. Respects prefers-reduced-motion.
-   ──────────────────────────────────────────────────────────────────────────── */
+
 function useFlip(dep) {
   const containerRef = useRef(null);
   const prevRects = useRef(new Map());
@@ -88,11 +83,7 @@ function useFlip(dep) {
   return containerRef;
 }
 
-/* ─── Contacts page ──────────────────────────────────────────────────────────
-   Full CRUD management: KPI strip, tag chip filter bar, card/table views,
-   drawer detail, add/edit dialog (react-hook-form), delete confirm.
-   All filtering is client-side for instant response.
-   ──────────────────────────────────────────────────────────────────────────── */
+
 export default function Contacts() {
   // null = loading, [] = empty, [...] = loaded
   const [contacts, setContacts] = useState(null);
@@ -437,10 +428,6 @@ useEffect(() => {
   );
 }
 
-/* ─── StatTile ───────────────────────────────────────────────────────────────
-   KPI card: tinted icon square + label + large value.
-   Copied from Leads' StatTile pattern.
-   ──────────────────────────────────────────────────────────────────────────── */
 function StatTile({ icon: Icon, label, value, tint }) {
   return (
     <Card className="p-4">
@@ -462,9 +449,6 @@ function StatTile({ icon: Icon, label, value, tint }) {
   );
 }
 
-/* ─── TagChip ────────────────────────────────────────────────────────────────
-   Quick-filter pill for a single tag. Copied from Leads' StageChip pattern.
-   ──────────────────────────────────────────────────────────────────────────── */
 function TagChip({ label, count, active, onClick }) {
   return (
     <button
@@ -489,9 +473,6 @@ function TagChip({ label, count, active, onClick }) {
   );
 }
 
-/* ─── ViewToggle ─────────────────────────────────────────────────────────────
-   Segmented Table2 / LayoutGrid icon toggle. Copied from Leads.
-   ──────────────────────────────────────────────────────────────────────────── */
 function ViewToggle({ view, onChange }) {
   const options = [
     { value: "grid", icon: LayoutGrid, label: "Card view" },
@@ -519,10 +500,7 @@ function ViewToggle({ view, onChange }) {
   );
 }
 
-/* ─── ContactCard ────────────────────────────────────────────────────────────
-   Single premium contact tile for the card grid view.
-   Shows avatar, name, title/company, favorite toggle, tags, email/phone.
-   ──────────────────────────────────────────────────────────────────────────── */
+
 function ContactCard({
   contact,
   flipId,
@@ -864,10 +842,7 @@ function DrawerRow({ icon, label, children }) {
   );
 }
 
-/* ─── ContactFormDialog ──────────────────────────────────────────────────────
-   Add / Edit dialog backed by react-hook-form.
-   Tags are entered as a comma-separated string and split on submit.
-   ──────────────────────────────────────────────────────────────────────────── */
+
 function ContactFormDialog({ open, contact, onClose, onSaved }) {
   const isEdit = Boolean(contact);
 

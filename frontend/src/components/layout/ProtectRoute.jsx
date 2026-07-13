@@ -1,5 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext.jsx";
 import { Spinner } from "../ui";
 
 /** Gate private routes — redirects to /login when unauthenticated. */

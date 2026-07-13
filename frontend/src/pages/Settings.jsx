@@ -25,11 +25,11 @@ import {
   Avatar,
   Spinner,
 } from "../components/ui";
-import { PageHeader } from "../components/common/PageHeader";
-import { useAuth } from "../context/AuthContext";
-import { authApi, aiApi } from "../lib/services";
-import { shortDate } from "../lib/format";
-import { cn } from "../lib/utils";
+import { PageHeader } from "../components/common/PageHeader.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
+import { authApi, aiApi } from "../lib/services.js";
+import { shortDate } from "../lib/format.js";
+import { cn } from "../lib/utils.js";
 
 /* ── Small icon accent rendered beside each card title ─────────── */
 function SectionIcon({ icon: Icon, className }) {

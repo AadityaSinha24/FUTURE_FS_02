@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Dialog, Button, Field, Input, Select, Textarea } from "../ui";
-import { leadsApi } from "../../lib/services";
-import { LEAD_STAGES, LEAD_PRIORITIES, LEAD_SOURCES } from "../../lib/constants";
+import { leadsApi } from "../../lib/services.js";
+import { LEAD_STAGES, LEAD_PRIORITIES, LEAD_SOURCES } from "../../lib/constants.js";
 
 /**
  * Create / edit a lead. When `lead` is provided we're editing; otherwise

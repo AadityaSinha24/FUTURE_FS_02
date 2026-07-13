@@ -1,4 +1,4 @@
-import { cn } from "../../lib/utils";
+import { cn } from "../../lib/utils.js";
 
 /** Small status pill. Pass `className` for color, or use a preset via `tone`. */
 export function Badge({ className, dot, children, ...props }) {

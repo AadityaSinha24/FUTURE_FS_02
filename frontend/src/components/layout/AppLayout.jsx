@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { IconRail } from "../IconRail";
-import { TopNav } from "../TopNav";
-import { Sidebar } from "../Sidebar";
+import { IconRail } from "../layout/IconRail.jsx";
+import { TopNav } from "../layout/TopNav.jsx";
+import { Sidebar } from "../layout/Sidebar.jsx";
 
 /**
  * Authenticated app shell matching the reference fintech dashboard:

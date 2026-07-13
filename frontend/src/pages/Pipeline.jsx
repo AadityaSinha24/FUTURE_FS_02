@@ -16,12 +16,12 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { Sparkles, GripVertical, Building2, TrendingUp, Layers, Target, DollarSign } from "lucide-react";
-import { PageHeader } from "../components/common/PageHeader";
+import { PageHeader } from "../components/common/PageHeader.jsx";
 import { Spinner, Avatar, Badge, Card } from "../components/ui";
-import { leadsApi, aiApi } from "../lib/services";
-import { currency } from "../lib/format";
-import { PIPELINE_STAGES, STAGE_STYLES, PRIORITY_STYLES } from "../lib/constants";
-import { cn } from "../lib/utils";
+import { leadsApi, aiApi } from "../lib/services.js";
+import { currency } from "../lib/format.js";
+import { PIPELINE_STAGES, STAGE_STYLES, PRIORITY_STYLES } from "../lib/constants.js";
+import { cn } from "../lib/utils.js";
 import { toast } from "sonner";
 
 /* Group a flat lead list into { stage: Lead[] } buckets. */

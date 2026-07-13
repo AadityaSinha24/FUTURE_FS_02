@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 import { Loader2 } from "lucide-react";
-import { cn } from "../../lib/utils";
+import { cn } from "../../lib/utils.js";
 
 /* Button variants — the workhorse of the UI. */
 const buttonVariants = cva(

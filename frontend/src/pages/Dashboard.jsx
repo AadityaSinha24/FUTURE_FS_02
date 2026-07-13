@@ -30,8 +30,8 @@ import {
   Pie,
 } from "recharts";
 import { format, isPast } from "date-fns";
-import { HeroCard } from "../components/dashboard/HeroCard";
-import { AiInsightsCard } from "../components/ai/AiInsightsCard";
+import { HeroCard } from "../components/dashboard/HeroCard.jsx";
+import { AiInsightsCard } from "../components/ai/AiInsightsCard.jsx";
 import {
   Card,
   SectionHeading,
@@ -40,11 +40,11 @@ import {
   Skeleton,
   Avatar,
 } from "../components/ui";
-import { analyticsApi, contactsApi, leadsApi, tasksApi } from "../lib/services";
-import { currency, shortDate, timeOf } from "../lib/format";
-import { STAGE_STYLES, PRIORITY_STYLES } from "../lib/constants";
-import { useAuth } from "../context/AuthContext";
-import { cn } from "../lib/utils";
+import { analyticsApi, contactsApi, leadsApi, tasksApi } from "../lib/services.js";
+import { currency, shortDate, timeOf } from "../lib/format.js";
+import { STAGE_STYLES, PRIORITY_STYLES } from "../lib/constants.js";
+import { useAuth } from "../context/AuthContext.jsx";
+import { cn } from "../lib/utils.js";
 
 /* Donut palette — sky-blue family used for the "Leads by Source" chart. */
 const SOURCE_COLORS = ["#0ea5e9", "#38bdf8", "#0369a1", "#7dd3fc", "#0284c7", "#bae6fd"];
@@ -80,12 +80,12 @@ export default function Dashboard() {
           Welcome Back, <span className="text-ink-soft">{user?.name?.split(" ")[0]}</span>
         </h1>
         <div className="flex items-center gap-3">
-          <div className="hidden items-center gap-2 rounded-full bg-surface px-4 py-2.5 text-sm font-medium text-ink-soft shadow-\[var\(--shadow-soft\)\] sm:flex">
+          <div className="hidden items-center gap-2 rounded-full bg-surface px-4 py-2.5 text-sm font-medium text-ink-soft shadow-[var(--shadow-soft)] sm:flex">
             <CalendarRange className="h-4 w-4" />
             {rangeLabel}
           </div>
           <Link
-            to="/leads"
+            to="/lead"
             className="brand-gradient brand-gradient-hover inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-semibold text-white shadow-sm transition"
           >
             <Plus className="h-4 w-4" /> Add New Lead
@@ -160,7 +160,7 @@ export default function Dashboard() {
             <SectionHeading
               title="Lead Activity"
               subtitle="Recent lead movements"
-              to="/leads"
+              to="/lead"
             />
             <div className="mt-4">
               <ActivityTable leads={data?.recentLeads || []} />
@@ -182,7 +182,7 @@ export default function Dashboard() {
             <BalanceChart trend={data?.trend || []} />
             <div className="mt-4 flex items-center gap-2">
               <Link
-                to="/leads"
+                to="/lead"
                 className="brand-gradient brand-gradient-hover inline-flex h-10 flex-1 items-center justify-center gap-1.5 rounded-full text-sm font-semibold text-white transition"
               >
                 <Plus className="h-4 w-4" /> Add Lead
@@ -284,7 +284,7 @@ function LeadsBySource({ leads }) {
                     <Cell key={i} fill={SOURCE_COLORS[i % SOURCE_COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip content={<ChartTooltip unit=" leads" />} />
+                <Tooltip content={<ChartTooltip unit=" lead" />} />
               </PieChart>
             </ResponsiveContainer>
             <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
@@ -377,7 +377,7 @@ function TopDeals({ leads }) {
 
   return (
     <Card className="flex flex-col p-6">
-      <SectionHeading icon={Trophy} title="Top Open Deals" subtitle="Biggest active opportunities" to="/leads" />
+      <SectionHeading icon={Trophy} title="Top Open Deals" subtitle="Biggest active opportunities" to="/lead" />
       {deals.length === 0 ? (
         <p className="py-8 text-center text-sm text-ink-soft">No open deals yet.</p>
       ) : (
@@ -485,7 +485,7 @@ function BalanceChart({ trend }) {
 function ChartTooltip({ active, payload, label, prefix = "", unit = "" }) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="rounded-xl border border-line bg-surface px-3 py-2 shadow-\[var\(--shadow-pop\)\]">
+    <div className="rounded-xl border border-line bg-surface px-3 py-2 shadow-[var(--shadow-pop)]">
       <p className="text-xs font-medium text-ink-soft">{label}</p>
       <p className="text-sm font-semibold text-ink">
         {prefix}
@@ -559,7 +559,7 @@ function TopContactsCard({ contacts }) {
 
   return (
     <Card className="p-6">
-      <SectionHeading title="Top Contacts" subtitle="Your key relationships" to="/contacts" />
+      <SectionHeading title="Top Contacts" subtitle="Your key relationships" to="/contact" />
       {contacts.length === 0 ? (
         <p className="mt-4 text-sm text-ink-soft">No contacts yet.</p>
       ) : (
@@ -581,7 +581,7 @@ function TopContactsCard({ contacts }) {
             )}
           </div>
           <Link
-            to="/contacts"
+            to="/contact"
             className="text-sm font-medium text-brand-700 hover:underline"
           >
             View all

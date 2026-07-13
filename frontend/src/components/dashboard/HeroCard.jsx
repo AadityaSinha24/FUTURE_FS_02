@@ -1,6 +1,6 @@
 import { Wifi } from "lucide-react";
 import { Card, SectionHeading } from "../ui";
-import { currency } from "../../lib/format";
+import { currency } from "../../lib/format.js";
 
 /**
  * The "credit-card" hero from the reference, repurposed for the CRM: a green

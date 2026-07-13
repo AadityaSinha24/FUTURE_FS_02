@@ -1,5 +1,5 @@
-import { cn } from "../../lib/utils";
-import { initials } from "../../lib/utils";
+import { cn } from "../../lib/utils.js";
+import { initials } from "../../lib/utils.js";
 
 /* Avatar that renders an image when available, otherwise colored initials.
    Color is derived deterministically from the name for a lively, varied look. */

@@ -40,7 +40,7 @@ export const getOverview = asyncHandler(async (req, res) => {
     const idx = indexByKey[key];
     if (idx !== undefined) {
       trend[idx].leads += 1;
-      if (l.status === "Won") trend[idx].won += 1;
+      if (l.status === "Won") trend[idx].won += l.value || 0;
     }
   }
   const recentLeads = [...leads]
@@ -61,7 +61,7 @@ export const getOverview = asyncHandler(async (req, res) => {
             pipelineValue: totalValue,
             totalLeads: leads.length,
             totalContacts: contactCount,
-            openTask,
+            openTasks,
             conversionRate,
         },
         pipeline: stages.map((s) => ({

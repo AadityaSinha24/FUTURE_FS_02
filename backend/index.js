@@ -22,7 +22,7 @@ app.use(
     })
 );
 
-app.use(express.json({limit: "1mb"}));
+app.use(express.json({limit: "5mb"}));
 app.use(express.urlencoded({extended: true}));
 if(process.env.NODE_ENV !== "production") app.use(morgan("dev"));
 
@@ -43,7 +43,7 @@ app.use(notFound);
 app.use(errorHandler);
 
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT ;
 
 const start = async () =>{
     try {

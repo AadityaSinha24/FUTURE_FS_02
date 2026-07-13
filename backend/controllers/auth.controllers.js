@@ -13,8 +13,12 @@ const toClientUser = (user) => ({
     createdAt: user.createdAt,
 });
 
-export const register = asyncHandler(async (requestAnimationFrame, res) => {
+export const register = asyncHandler(async (req, res) => {
+    console.log("req: ", req.body);
+    
     const {name, email, password, company} = req.body;
+    
+    
 
     if(!name || !email || !password) {
         throw new ApiError(409, "An account with that email already exists");

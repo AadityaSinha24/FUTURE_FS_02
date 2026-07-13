@@ -2,7 +2,7 @@ import { Task } from "../models/Task.models.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 
-export const getTasks = asyncHandler(async (requestAnimationFrame,res) => {
+export const getTasks = asyncHandler(async (req,res) => {
     const {status, priority, relatedLead} = req.query;
     const filter = {owner: req.user._id};
     if(status) filter.status = status;

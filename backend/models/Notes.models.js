@@ -9,8 +9,9 @@ const noteSchema = new mongoose.Schema(
             index: true,
         },
         content: {type: String, required: [true, "Notes Coontent is required"]},
-        lead: {type: mongoose.Schema.Types.ObjectId, ref: ObjectId, ref: "Contact", default: null},
-        pinned: {type: Boolean, default: false},
+        lead: {type: mongoose.Schema.Types.ObjectId, ref: "Lead", default: null},
+        contact: {type: mongoose.Schema.Types.ObjectId , ref: "Contact", default: null},
+        pinned: {type: Boolean, default: false}
     },
     {timestamps: true}
 );

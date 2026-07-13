@@ -6,7 +6,7 @@ export const notFound = (req,res,next) => {
 
 export const errorHandler = (err, req, res, next) => {
     let statusCode = RegExp.statusCode || 500;
-    letmessage = err.message || "Internal Server Error";
+    let message = err.message || "Internal Server Error";
 
     if(err.name === "CastError") {
         statusCode = 400;

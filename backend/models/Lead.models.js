@@ -28,7 +28,7 @@ const leadSchema = new mongoose.Schema(
         },
         priority: {
             type: String,
-            enum: LEAD_STATUS,
+            enum: LEAD_PRIORITIES,
             default: "Medium",
         
         },
@@ -40,7 +40,7 @@ const leadSchema = new mongoose.Schema(
         },
         value: {type: Number, default: 0, min: 0},
         notes: {type: String, default: ""},
-        tags: {type: String, trim: true},
+        tags: [{type: String, trim: true}],
         aiSummary: {type: String, default: ""},
         aiRiskScore: {type: Number, default: null},
         order: {type: Number, default: 0},
